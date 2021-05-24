@@ -1,18 +1,20 @@
 package pl.coderslab.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Entity
+@Data
 @Table(name="institution")
 public class Institution {
-    private Long id;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private Long id;
+
+    @Size(min = 2)
+    private String name;
+
+    private String description;
 }

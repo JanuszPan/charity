@@ -5,12 +5,11 @@ import org.springframework.data.jpa.repository.Query;
 import pl.coderslab.entity.Donation;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface DonationRepository extends JpaRepository<Donation, Long> {
-    @Query("SELECT SUM(d.quantity) FROM Donation d")
-    int allBags();
 
-//    @Query("SELECT d FROM Donation d WHERE d.user.id = :id")
-//    List<Donation> myDonations(Long id);
+    @Query(value = "SELECT SUM(quantity) FROM donation", nativeQuery = true)
+    List<Donation> quantitySum(Long id);
 
 }

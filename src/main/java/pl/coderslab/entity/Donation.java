@@ -23,7 +23,7 @@ public class Donation {
 
     private Integer quantity;//liczba worków
 
-    @ManyToMany(mappedBy = "donation", fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Category> categories = new ArrayList<>();
 
     @ManyToOne

@@ -7,16 +7,10 @@ import java.util.List;
 
 public interface InstitutionRepository extends JpaRepository<Institution, Long> {
 
-    List<Institution> findAllBy(String name);
+    List<Institution> findAll(String name);
 
-    List<Institution> findInstitutionById(Long id);
+    Institution findInstitutionById(Long id);
 
-    List<Institution> findAllById(Long id);
-
-    List<Institution> findInstitutionByName(String name);
-
-
-
-
+    Institution findInstitutionByName(String name);
 
 }

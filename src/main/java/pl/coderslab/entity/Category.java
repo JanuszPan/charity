@@ -1,17 +1,24 @@
 package pl.coderslab.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotBlank;
 
 @Entity
-@Data
 @Table(name = "category")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Category {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
-    @Size(min = 2)
-     private String name;
-}
+    @NotBlank
+    private String name;
+
+ }

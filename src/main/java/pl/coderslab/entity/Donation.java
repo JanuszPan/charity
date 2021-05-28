@@ -1,6 +1,9 @@
 package pl.coderslab.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -11,10 +14,13 @@ import java.util.List;
 @Entity
 @Table(name = "donation")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Donation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private Integer quantity;//liczba worków
 
     @ManyToMany(mappedBy = "donation", fetch = FetchType.EAGER)
@@ -29,6 +35,7 @@ public class Donation {
 
     private String zipCode;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
 
     private LocalTime pickUpTime;

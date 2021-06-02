@@ -8,7 +8,6 @@ import pl.coderslab.services.DonationService;
 @Controller
 @AllArgsConstructor
 public class DonationController {
-   DonationService donationService;
-   DonationRepository donationRepository;
+    private final DonationService donationService;
 
 }

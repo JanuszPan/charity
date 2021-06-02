@@ -1,1 +1,1 @@
-INSERT INTO institution(name,description) values ('Fundacja "Dbam o Zdrowie"','Pomoc dzieciom z ubogich rodzin'),('Fundacja "A kogo"','Pomoc w wybudzaniu dzieci ze śpiączki');
+INSERT INTO charity_donation.institution(name,description) values ('Fundacja "Dbam o Zdrowie"','Pomoc dzieciom z ubogich rodzin'),('Fundacja "A kogo"','Pomoc w wybudzaniu dzieci ze śpiączki'),('Fundacja "Dla dzieci"','Pomoc osobom znajdującym się w trudnej sytuacji życiowej'),('Fundacja "Bez domu"','Pomoc dla osób nie posiadających miejsca zamieszkania');

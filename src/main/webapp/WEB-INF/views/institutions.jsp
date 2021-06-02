@@ -10,6 +10,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Institutions</title>
     <link rel="stylesheet" href="<c:url value="../resources/css/style.css"/>"/>
+    <style>
+        table, th, td {
+            border: 1px solid khaki;
+            font-family: 'Merriweather', serif;
+            font-weight: 500;
+            font-size: 2.2rem;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
@@ -17,7 +25,7 @@
     <h2>Fundacje</h2>
     <div class="help--slides active" data-id="1">
         <table class="help--slides-items">
-            <caption>Lista zweryfikowanych Fundacji, z którymi współpracujemy.</caption>
+            <caption><b>Lista zweryfikowanych Fundacji, z którymi współpracujemy.</b></caption><br>
             <tr class="help--slides-items">
                 <th>ID</th>
                 <th>Fundacja</th>

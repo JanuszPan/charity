@@ -9,7 +9,9 @@ import java.util.Optional;
 
 public interface DonationRepository extends JpaRepository<Donation, Long> {
 
+    Donation  findDonationById(Long id);
+
     @Query(value = "SELECT SUM(quantity) FROM donation", nativeQuery = true)
-    List<Donation> quantitySum(Long id);
+    int sumBags();
 
 }

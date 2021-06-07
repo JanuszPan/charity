@@ -1,1 +1,3 @@
 INSERT INTO charity_donation.institution(name,description) values ('Fundacja "Dbam o Zdrowie"','Pomoc dzieciom z ubogich rodzin'),('Fundacja "A kogo"','Pomoc w wybudzaniu dzieci ze śpiączki'),('Fundacja "Dla dzieci"','Pomoc osobom znajdującym się w trudnej sytuacji życiowej'),('Fundacja "Bez domu"','Pomoc dla osób nie posiadających miejsca zamieszkania');
+INSERT INTO charity_donation.category(name) values ('ubrania'),('zabawki');
+INSERT INTO charity_donation.donation(city, pick_up_comment, pick_up_date, pick_up_time, quantity, street, zip_code, institution_id) values ('Kraków','komentarz 1','2021-05-10','12:05',2,'Karmelicka','31-456',1),('Kraków','komentarz 2','2021-06-01','10:10',1,'Karmelicka','31-456',2);

@@ -20,6 +20,7 @@ public class DonationService {
     }
 
     public int countSum (){
+
         return donationRepository.sumBags();
     }
 
@@ -29,6 +30,10 @@ public class DonationService {
     }
 
     public void save (Donation donation){
+
         donationRepository.save(donation);
+    }
+    public List<Donation> getAllDonationsSortedByPickUpDateAndPickUpTime() {
+        return donationRepository.findDonationByPickUpDateAndPickUpTime();
     }
 }

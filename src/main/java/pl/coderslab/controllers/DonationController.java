@@ -7,16 +7,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import pl.coderslab.entity.Donation;
-import pl.coderslab.entity.Institution;
-import pl.coderslab.repository.DonationRepository;
 import pl.coderslab.services.DonationService;
-
 import javax.validation.Valid;
 
 @Controller
 @AllArgsConstructor
 public class DonationController {
     private final DonationService donationService;
+
+    @GetMapping("donation/all")
+    public String allDonations(Model model) {
+        model.addAttribute("donationsAll", donationService.getAllDonationsSortedByPickUpDateAndPickUpTime());
+        return "donationsAll";
+    }
 
     @GetMapping("donation/add")
     public String addDonation(Model model) {
@@ -29,7 +32,4 @@ public class DonationController {
         donationService.addDonation(newDonation);
         return "redirect:donationAll";
     }
-
-
-
 }

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import pl.coderslab.entity.Donation;
+import pl.coderslab.repository.CategoryRepository;
 import pl.coderslab.services.DonationService;
 import javax.validation.Valid;
 
@@ -14,6 +15,7 @@ import javax.validation.Valid;
 @AllArgsConstructor
 public class DonationController {
     private final DonationService donationService;
+    private final CategoryRepository categoryRepository;
 
     @GetMapping("donation/all")
     public String allDonations(Model model) {
@@ -24,6 +26,7 @@ public class DonationController {
     @GetMapping("donation/add")
     public String addDonation(Model model) {
         model.addAttribute("newDonation", new Donation());
+        model.addAttribute("categories", categoryRepository.findAll());
         return "addDonation";
     }
 
